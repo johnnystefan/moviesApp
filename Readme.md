@@ -2,8 +2,11 @@
 
 Omni is a Django Project with Django Rest Framework. Your RESTful API comes with a custom user model, login / logout / user registration / Change and password recovery. It also has a CRUD of Movies, in addition, Search and ordering of Movies.
 
-## Features
+## Built with 🛠️
+* [Python](https://www.python.org/downloads/)
+* [VS Code](https://code.visualstudio.com/)
 
+## Features
 - Django 2.2 and Python 3.8
 - Custom user model
 - Token-based auth
@@ -16,6 +19,8 @@ Omni is a Django Project with Django Rest Framework. Your RESTful API comes with
 ## First-time setup
 
 1.  Make sure Python 3.8x and Virtualenv are already installed.
+
+### Installation 🔧
 
 ```
 $ git clone https://github.com/johnnystefan/moviesApp.git
@@ -59,4 +64,9 @@ CRUD:
  - PAGINATION - http://127.0.0.1:8000/api/movie/list?page=2
  - SEARCH + PAGINATION + ORDERING: - http://127.0.0.1:8000/api/movie/list?search=johnny&page=2&ordering=-date_updated
 
+## Author ✒️
+
+* ** Johnny Stefan Ordoñez Mazurek ** - * Backend Developer Python & Django * -
+
 ---
+⌨️ with ❤️ made in Colombia, January 16, 2020 by [Johnny Stefan] (https://github.com/johnnystefan) 😊
