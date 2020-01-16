@@ -27,15 +27,12 @@ $ \.env\Scripts\activate.bat
 $ source .env/Scripts/activate
 $ pip install -r requirements.txt
 $ git clone https://github.com/wsvincent/drfx.git
-$ cd drfx
-$ pipenv install
-$ pipenv shell
 ```
 
 3.  Set up the initial migration for our custom user models in users and build the database.
 
 ```
-(drfx) $ python manage.py makemigrations users
+(drfx) $ python manage.py makemigrations
 (drfx) $ python manage.py migrate
 (drfx) $ python manage.py createsuperuser
 (drfx) $ python manage.py runserver
@@ -45,13 +42,20 @@ $ pipenv shell
 
 Login with your superuser account. Then navigate to all users. Logout. Sign up for a new account and repeat the login, users, logout flow.
 
-- login - http://127.0.0.1:8000/api/v1/rest-auth/login/
-- all users - http://127.0.0.1:8000/api/v1/users
-- logout - http://127.0.0.1:8000/api/v1/rest-auth/logout/
-- signup - http://127.0.0.1:8000/api/v1/rest-auth/registration/
+- login - http://127.0.0.1:8000/api/user/login
+- logout - http://127.0.0.1:8000/logout/
+- signup - http://127.0.0.1:8000/api/user/register
+
+CRUD:
+
+ - CREATE https://<your-domain>/api/movie/create
+ - RETRIEVE a SINGLE https://<your-domain>/api/movie/<slug>/
+ - RETRIEVE a LIST https://<your-domain>/api/movie/list
+ - UPDATE https://<your-domain>/api/movie/<slug>/update
+ - DELETE https://<your-domain>/api/movie/<slug>/delete
+ - SEARCH http://<your-domain>/api/movie/list?search=johnny
+ - ORDERING http://<your-domain>/api/movie/list?ordering=-date_updated
+ - PAGINATION http://<your-domain>/api/movie/list?page=2
+ - SEARCH + PAGINATION + ORDERING: <your-domain>/api/movie/list?search=johnny&page=2&ordering=-date_updated
 
 ---
-
-Want to learn more about Django REST Framework? I've written an entire book that takes a project-based approach to building web APIs with Django. The first 2 chapters are available for free online at [https://djangoforapis.com/](https://djangoforapis.com/).
-
-[![Django for APIs](https://wsvincent.com/assets/images/djangoforapis_cover_300.jpeg)](https://djangoforapis.com)
