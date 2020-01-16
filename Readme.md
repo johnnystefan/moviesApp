@@ -16,23 +16,24 @@ Omni is a Django Project with Django Rest Framework. Your RESTful API comes with
 ## First-time setup
 
 1.  Make sure Python 3.8x and Virtualenv are already installed.
-2.  Clone the repo and configure the virtual environment:
 
 ```
+$ git clone https://github.com/johnnystefan/moviesApp.git
+$ cd moviesApp
 $ python -m virtualenv .env
-$ cd .env
 # Activate your virtualenv on Windows
 $ \.env\Scripts\activate.bat
 # Activate your virtualenv on Linux
 $ source .env/Scripts/activate
 $ pip install -r requirements.txt
-$ git clone https://github.com/wsvincent/drfx.git
+$ mkdir temp
 ```
 
 3.  Set up the initial migration for our custom user models in users and build the database.
 
 ```
-(drfx) $ python manage.py makemigrations
+(drfx) $ python manage.py makemigrations movies
+(drfx) $ python manage.py makemigrations users
 (drfx) $ python manage.py migrate
 (drfx) $ python manage.py createsuperuser
 (drfx) $ python manage.py runserver
