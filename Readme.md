@@ -48,14 +48,14 @@ Login with your superuser account. Then navigate to all users. Logout. Sign up f
 
 CRUD:
 
- - CREATE - https:/<your-domain>/api/movie/create
- - RETRIEVE a SINGLE - https:/<your-domain>/api/movie/<slug>/
- - RETRIEVE a LIST - https://<your-domain>/api/movie/list
- - UPDATE - https://<your-domain>/api/movie/<slug>/update
- - DELETE - https://<your-domain>/api/movie/<slug>/delete
- - SEARCH - http://<your-domain>/api/movie/list?search=johnny
- - ORDERING - http://<your-domain>/api/movie/list?ordering=-date_updated
- - PAGINATION - http://<your-domain>/api/movie/list?page=2
- - SEARCH + PAGINATION + ORDERING: - http://<your-domain>/api/movie/list?search=johnny&page=2&ordering=-date_updated
+ - CREATE - http://127.0.0.1:8000/api/movie/create
+ - RETRIEVE a SINGLE - http://127.0.0.1:8000/api/movie/<slug>/
+ - RETRIEVE a LIST - http://127.0.0.1:8000/api/movie/list
+ - UPDATE - http://127.0.0.1:8000/api/movie/<slug>/update
+ - DELETE - http://127.0.0.1:8000/api/movie/<slug>/delete
+ - SEARCH - http://127.0.0.1:8000/api/movie/list?search=johnny
+ - ORDERING - http://127.0.0.1:8000/api/movie/list?ordering=-date_updated
+ - PAGINATION - http://127.0.0.1:8000/api/movie/list?page=2
+ - SEARCH + PAGINATION + ORDERING: - http://127.0.0.1:8000/api/movie/list?search=johnny&page=2&ordering=-date_updated
 
 ---
