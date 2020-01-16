@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style type="text/css">
+	@media (max-width: 768px) { 
+		.right-column{
+			margin-left: 0px;
+		}
+	}
+	@media (min-width: 768px) { 
+		.right-column{
+			margin-left: 20px;
+		}
+	}
+	.movie-post-container{
+		margin-bottom: 20px;
+		width: 100%;
+	}
+	.create-post-bar{
+		background-color: #fff;
+		margin-bottom:20px;
+	}
+	.left-column{
+		padding:0px;
+	}
+	.right-column{
+		padding:0px;
+	}
+	.lead{
+		font-size: 17px;
+	}
+	.content {
+		text-align: justify;
+	}
+</style>
+<div class="container">
+	<!-- Top 'create post' bar -->
+	<div class="d-lg-none mb-3">
+		<div class="card m-auto d-flex flex-column p-3">
+			<p class="m-auto"><a class="btn btn-primary" href="{% url 'movie:create' %}">Add movie</a></p>
+		</div>
+	</div>
+	<!-- end Top 'create post' bar -->
+
+	<!-- Right 'create post' column  -->
+	<div class="right-column col-lg-3 d-lg-flex d-none flex-column">
+
+		<div class="card create-post-bar d-flex flex-column p-3">
+			<p class="m-auto"><a class="btn btn-primary" href="{% url 'movie:create' %}">Add movie</a></p>
+		</div>
+	
+	</div>
+	<!-- end Right 'create post' column  -->
+
+	<div class="row">
+		<!-- movie feed -->
+		<div class="content">
+			<!-- Movie posts-->
+			{% if movie_posts %}
+				{% for post in movie_posts %}
+
+						{% include 'movies/snippets/movie_post_snippet.html' with movie_post=post %}
+
+				{% endfor %}
+			{% else %}
+				<div class="movie-post-container">
+					{% include 'movies/snippets/movie_post_snippet.html' with query=query %}
+				</div>
+			{% endif %}
+			<!-- End Movie posts-->
+			
+			<!-- Pagination -->
+			{% include 'movies/snippets/movie_post_pagination.html' with movie_posts=movie_posts %}
+
+		</div>
+		<!-- end movie feed -->
+
+	</div>
+</div>
+
+{% endblock content %}

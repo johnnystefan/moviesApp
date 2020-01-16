@@ -1,0 +1,105 @@
+{% extends 'base.html' %} {% block content %}
+<style type="text/css">
+  .card {
+    width: 600px;
+    max-width: 700px;
+    border-radius: 9px 9px 15px 15px;
+    background: none 0 0 repeat scroll #000;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    text-align: center;
+		color: white;
+  }
+
+  .container {
+    padding: 20px;
+  }
+  .movie-info-header {
+    background: none 0 0 repeat scroll #0272c4;
+    background-image: linear-gradient(#0272c4, #0e4168);
+    background-image: -webkit-linear-gradient(#0272c4, #0e4168);
+    color: #fff;
+    font-family: Century Gothic, Arial, Verdana, sans-serif;
+    line-height: 35px;
+    padding: 12px 5px 12px 10px;
+    position: relative;
+    border-radius: 9px 9px 0 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+
+  .movie-info-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 1px 0 #424548;
+  }
+
+  .img-size {
+    max-width: max-content;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    align-self: center;
+    margin: 43px 0;
+  }
+
+  .infodate {
+    background: none repeat scroll -2px center #646464;
+    color: #e5e6e8;
+    padding-left: 8px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <!-- Movie post -->
+    <div class="card m-auto">
+      <div class="movie-info-header">
+        <h1>
+          {{movie_post.title}}
+        </h1>
+      </div>
+      <div class="infodate">
+				<i class="fa fa-user"></i>
+				Published by {{movie_post.author.username}}
+				<i class="fa fa-calendar"></i>
+				{{movie_post.date_published}}
+				<i class="fa fa-pencil-square-o"></i>
+				Updated: {{movie_post.date_updated}}
+      </div>
+      <img
+        class="card-img-top img-size"
+        height="444"
+        width="300"
+        src="{{movie_post.image.url}}"
+      />
+      <div class="card-body my-2">
+				<p class="card-text">{{movie_post.body|linebreaksbr}}</p>
+
+				<strong style="font-size: 21px;">
+					<i class="fas fa-info-circle"></i>
+					Movie Info:
+				</strong>
+				<p class="card-text">Gender: {{movie_post.gender}}</p>
+				<p class="card-text">Director: {{movie_post.director}}</p>
+
+        <p>
+          {% if movie_post.author == request.user %}
+          <a
+            href="{% url 'movie:edit' movie_post.slug %}"
+            class="btn btn-primary"
+            >Update</a
+          >
+          {% endif %}
+        </p>
+      </div>
+    </div>
+    <!-- end Movie post -->
+  </div>
+</div>
+
+{% endblock content %}
