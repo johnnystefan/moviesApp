@@ -32,11 +32,11 @@ $ mkdir temp
 3.  Set up the initial migration for our custom user models in users and build the database.
 
 ```
-(drfx) $ python manage.py makemigrations movies
-(drfx) $ python manage.py makemigrations users
-(drfx) $ python manage.py migrate
-(drfx) $ python manage.py createsuperuser
-(drfx) $ python manage.py runserver
+(.env) $ python manage.py makemigrations movies
+(.env) $ python manage.py makemigrations users
+(.env) $ python manage.py migrate
+(.env) $ python manage.py createsuperuser
+(.env) $ python manage.py runserver
 ```
 
 4.  Endpoints
