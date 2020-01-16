@@ -48,8 +48,8 @@ Login with your superuser account. Then navigate to all users. Logout. Sign up f
 
 CRUD:
 
- - CREATE - https://<your-domain>/api/movie/create
- - RETRIEVE a SINGLE - https://<your-domain>/api/movie/<slug>/
+ - CREATE - https:/<your-domain>/api/movie/create
+ - RETRIEVE a SINGLE - https:/<your-domain>/api/movie/<slug>/
  - RETRIEVE a LIST - https://<your-domain>/api/movie/list
  - UPDATE - https://<your-domain>/api/movie/<slug>/update
  - DELETE - https://<your-domain>/api/movie/<slug>/delete
