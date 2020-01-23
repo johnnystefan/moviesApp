@@ -29,7 +29,7 @@ $ python -m virtualenv .env
 # Activate your virtualenv on Windows
 $ \.env\Scripts\activate.bat
 # Activate your virtualenv on Linux
-$ source .env/Scripts/activate
+$ source .env/bin/activate
 $ pip install -r requirements.txt
 $ mkdir temp
 ```
